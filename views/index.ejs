@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('./partials/head') %> <%- include('./partials/navbar') %>
+
+<section>
+  <div class="container" id="container_home">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-6">
+        <img src="images/home.svg" alt="gambar" width="80%" />
+      </div>
+      <div class="col-6">
+        <h1 class="">Selamat Datang</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #container_home {
+    margin-top: 10em;
+  }
+</style>
+
+<%- include('./partials/footer') %>

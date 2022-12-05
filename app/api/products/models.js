@@ -8,7 +8,10 @@ const productsSchema = new Schema(
     author: String,
     price: String,
     publisher: String,
-    url: String,
+    url: {
+      type: String,
+      default: null,
+    },
   },
   { timestamps: true }
 );

@@ -17,7 +17,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // routes
 const productRoutes = require("./app/api/products/router");
+const homeRoutes = require("./app/api/home/router");
 app.use("/products", productRoutes);
+app.use("/", homeRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
