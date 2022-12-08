@@ -1,6 +1,16 @@
 const Products = require("./models");
 const { StatusCodes } = require("http-status-codes");
 
+exports.renderProductsUI = (req, res, next) => {
+  try {
+    res.render("products", {
+      title: "Halaman products",
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 exports.getAllProducts = async (req, res, next) => {
   try {
     const { page = 1, limit = 10 } = req.query;
@@ -11,7 +21,6 @@ exports.getAllProducts = async (req, res, next) => {
     const totalData = await Products.count();
 
     res.status(200).json({
-      msg: "berikut data",
       result,
       totalData,
       currentPage: page,
