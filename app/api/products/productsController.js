@@ -1,10 +1,12 @@
 const Products = require("./models");
 const { StatusCodes } = require("http-status-codes");
 
-exports.renderProductsUI = (req, res, next) => {
+exports.renderProductsUI = async (req, res, next) => {
   try {
+    const result = await Products.find();
     res.render("products", {
       title: "Halaman products",
+      result,
     });
   } catch (e) {
     console.log(e);

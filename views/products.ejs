@@ -1,9 +1,9 @@
-<%- include('./partials/head') %>
+<%- include('./partials/head') %> <%- include('./partials/navbar') %>
 <section id="products">
   <div class="container">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-6">
-        <form
+    <div class="row">
+      <div class="col-8 offset-2">
+        <!-- <form
           action="#"
           class="d-flex justify-content-center align-items-center"
           autocomplete="off"
@@ -16,14 +16,13 @@
               search
             </button>
           </div>
-        </form>
+        </form> -->
         <div
           class="wrapper d-flex justify-content-center align-items-center flex-wrap"
         >
-          <table class="table">
+          <table class="table" id="table_products">
             <thead>
               <tr>
-                <th scope="col">No</th>
                 <th scope="col">Title</th>
                 <th scope="col">Author</th>
                 <th scope="col">Publisher</th>
@@ -31,10 +30,19 @@
                 <th scope="col">Image</th>
               </tr>
             </thead>
-            <% i=1 %>
-            <tbody id="getBody"></tbody>
+            <tbody id="getBody">
+              <% result.forEach(e => { %>
+              <tr>
+                <td><%= e.title %></td>
+                <td><%= e.author %></td>
+                <td><%= e.publisher %></td>
+                <td><%= e.price %></td>
+                <td><%= e.image %></td>
+              </tr>
+              <% }) %>
+            </tbody>
           </table>
-          <nav
+          <!-- <nav
             aria-label="Page navigation justify-content-center align-items-center"
           >
             <ul class="pagination mx-auto">
@@ -50,7 +58,7 @@
                 <a class="page-link" id="next">Next</a>
               </li>
             </ul>
-          </nav>
+          </nav> -->
         </div>
       </div>
     </div>
@@ -59,7 +67,7 @@
 
 <style>
   #products {
-    margin-top: 10em;
+    margin-top: 5em;
   }
 </style>
 
